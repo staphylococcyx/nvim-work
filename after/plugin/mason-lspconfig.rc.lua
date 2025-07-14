@@ -26,6 +26,9 @@ if not on_attach_ok then
 end
 
 local ensure_installed = {
+	'docker_compose_language_service',
+	'dockerls',
+	'intelephense',
 	'jdtls',
 	'lua_ls',
 }
@@ -51,7 +54,8 @@ vim.schedule(function ()
 			end
 
 			vim.lsp.config(string.lower(server), server_opts)
-			vim.lsp.enable(server)
 		end
+
+		vim.lsp.enable(server)
 	end
 end)

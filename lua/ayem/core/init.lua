@@ -1,3 +1,3 @@
-require 'ayem.core.mappings'
-require 'ayem.core.editor'
-require 'ayem.core.base'
+require("ayem.core.mappings")
+require("ayem.core.editor")
+require("ayem.core.base")

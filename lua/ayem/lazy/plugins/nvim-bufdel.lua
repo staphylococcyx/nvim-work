@@ -1,5 +1,5 @@
 return {
-	'ojroques/nvim-bufdel',
+	"ojroques/nvim-bufdel",
 	opts = {
 		quit = false,
 	},

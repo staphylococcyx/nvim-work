@@ -1,5 +1,5 @@
 return {
-	'j-hui/fidget.nvim',
+	"j-hui/fidget.nvim",
 	opts = {
 		notification = {
 			-- Options related to the notification window and buffer
@@ -9,4 +9,3 @@ return {
 		},
 	},
 }
-

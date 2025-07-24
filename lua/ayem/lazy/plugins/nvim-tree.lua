@@ -3,6 +3,9 @@ return {
 	version = "*",
 	lazy = false,
 	opts = {
+		git = {
+			enable = false,
+		},
 		renderer = {
 			group_empty = true,
 		},

@@ -1,19 +1,11 @@
-local ok, cmp = pcall(require, 'cmp')
+local ok, cmp = pcall(require, "cmp")
 if not ok then
-	return vim.notify(
-		'COULD NOT LOAD NVIM-CMP',
-		vim.log.levels.ERROR,
-		{ title = 'NVIM-CMP' }
-	)
+	return vim.notify("COULD NOT LOAD NVIM-CMP", vim.log.levels.ERROR, { title = "NVIM-CMP" })
 end
 
-local luasnip_ok, luasnip = pcall(require, 'luasnip')
+local luasnip_ok, luasnip = pcall(require, "luasnip")
 if not luasnip_ok then
-	return vim.notify(
-		'COULD NOT LOAD LUASNIP',
-		vim.log.levels.ERROR,
-		{ title = 'LUASNIP' }
-	)
+	return vim.notify("COULD NOT LOAD LUASNIP", vim.log.levels.ERROR, { title = "LUASNIP" })
 end
 
 cmp.setup({
@@ -28,11 +20,11 @@ cmp.setup({
 		-- documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
-		['<C-b>'] = cmp.mapping.scroll_docs(-4),
-		['<C-f>'] = cmp.mapping.scroll_docs(4),
-		['<C-Space>'] = cmp.mapping.complete(),
-		['<C-e>'] = cmp.mapping.abort(),
-		['<CR>'] = cmp.mapping(function(fallback)
+		["<C-b>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-e>"] = cmp.mapping.abort(),
+		["<CR>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				if luasnip.expandable() then
 					luasnip.expand()
@@ -65,15 +57,15 @@ cmp.setup({
 		end, { "i", "s" }),
 	}),
 	sources = cmp.config.sources({
-		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' }, -- For luasnip users.
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" }, -- For luasnip users.
 		{
 			name = "lazydev",
 			group_index = 0, -- set group index to 0 to skip loading LuaLS completions
 		},
 	}, {
-			{ name = 'buffer' },
-		})
+		{ name = "buffer" },
+	}),
 })
 
 -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
@@ -85,23 +77,24 @@ cmp.setup({
 	  { name = 'buffer' },
 	})
  })
- require("cmp_git").setup() ]]-- 
+ require("cmp_git").setup() ]]
+--
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
+cmp.setup.cmdline({ "/", "?" }, {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = 'buffer' }
-	}
+		{ name = "buffer" },
+	},
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
-		{ name = 'path' }
+		{ name = "path" },
 	}, {
-			{ name = 'cmdline' }
-		}),
-	matching = { disallow_symbol_nonprefix_matching = false }
+		{ name = "cmdline" },
+	}),
+	matching = { disallow_symbol_nonprefix_matching = false },
 })

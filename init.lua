@@ -1,6 +1,6 @@
 if vim.loader then
-	vim.loader.enable()
+    vim.loader.enable()
 end
 
-require("ayem.core")
-require("ayem.lazy")
+require 'ayem.core'
+require 'ayem.lazy'

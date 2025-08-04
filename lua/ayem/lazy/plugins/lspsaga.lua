@@ -3,7 +3,7 @@ return {
     event = 'LspAttach',
     opts = {
         lightbulb = {
-            enabled = false,
+            enable = false,
         },
     },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },

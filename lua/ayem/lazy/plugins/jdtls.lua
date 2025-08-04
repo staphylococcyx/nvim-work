@@ -1,5 +1,5 @@
 return {
-    'mfussenegger/nvim-jdtls',
-    ft = 'java',
-    -- enabled = false,
+	'mfussenegger/nvim-jdtls',
+	ft = 'java',
+	-- enabled = false,
 }

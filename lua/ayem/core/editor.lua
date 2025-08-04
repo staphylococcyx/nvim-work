@@ -13,9 +13,9 @@ opt.signcolumn = 'yes'
 local space = '·'
 opt.list = true
 opt.listchars:append {
-    tab = '│─',
-    multispace = space,
-    lead = space,
-    trail = space,
-    nbsp = space,
+	tab = '│─',
+	multispace = space,
+	lead = space,
+	trail = space,
+	nbsp = space,
 }

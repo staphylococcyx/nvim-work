@@ -1,5 +1,5 @@
 return {
-    'nvim-tree/nvim-web-devicons',
-    lazy = false,
-    opts = {},
+	'nvim-tree/nvim-web-devicons',
+	lazy = false,
+	opts = {},
 }
